@@ -1,0 +1,17 @@
+[package]
+name = "google-service-account-oauth-jwt-assertion"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = ["google-service-account-json-key"]
+
+[dependencies]
+jsonwebtoken = { version = "8", default-features = false, features = ["use_pem"] }
+serde = { version = "1", default-features = false, features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+
+google-service-account-json-key = { version = "0.1", default-features = false, path = "../google-service-account-json-key", optional = true }

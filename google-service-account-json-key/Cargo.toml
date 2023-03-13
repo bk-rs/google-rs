@@ -1,0 +1,10 @@
+[package]
+name = "google-service-account-json-key"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", default-features = false, features = ["std", "derive"] }
+serde-enum-str = { version = "0.3", default-features = false }
+url = { version = "2", default-features = false, features = ["serde"] }
+serde_json = { version = "1", default-features = false, features = ["std"] }

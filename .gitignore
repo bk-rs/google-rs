@@ -1,0 +1,11 @@
+# rust
+/target
+/Cargo.lock
+
+# IDE
+.vscode
+.vs
+.idea
+
+# Mac
+.DS_Store

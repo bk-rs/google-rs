@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    # 
+    "google-service-account-json-key",
+    # 
+    "google-service-account-oauth-jwt-assertion",
+    "google-service-account-oauth-jwt-assertion/cli",
+]

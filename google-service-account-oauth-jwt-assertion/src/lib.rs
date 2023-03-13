@@ -108,7 +108,7 @@ mod tests {
     fn test_create_for_pem() {
         const PEM_PRIVATE_KEY : &str = "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLs9M9cBICRquC\nARPxcKVzToxE6zeSfDWhBjjqzk/zoiS9NOzR538lGxU8qE1kc+ZH0+6QWUsQ4ZwB\nzJUD/OFp5QvhD89xjAThoNOKc3kj6l+siWbdAKwNVOdTOpXwpomlwOlMp/t9Dpia\n6YIcWK+OuTW9XlPHsl9BJnk/WgDZFeqsQ4PyFGW/o+UrqzCpqHVmLyiUb6SIGIzq\nFiU61zvhBkO2mDnQVqMELFhDzBwky8T6A7jnh3pZBphs4v/sUFHJrk/ozcgnDXXK\nAqQwvu3jagc6FZvrNyCSF2yD41WwB9Su78ZnX4BPfKfc57pJyU2LHh9dtOqXZuq3\nvq2ivT7RAgMBAAECggEABlmdvS2QMif30r6r23vyfGy3bLKUcemTVmi2P4Oc9HBa\nitdqhoSb7xEwEUsB1p7ST+zoY/GUqHsP/PJettgcQsvUGfj/M3/06v+zeH5vCVKW\nFu/VmBAcTPIXn/2UjQL0CYnA/BXEfjqFQVcEKlQNbPqTFUsqe3AxDfvgDbyFiD7b\nZYq83mFLah+Qfrev8BGUvDBS2F68Rf8nxOMxEprMRCwOeevkAHSBESbIV6hs79es\noM6+mS3Mr8dzLRjAWl9H2Xy5EM2wS4esEAqBgjlFhepIJ9/adF2VO4BqK+addrdr\ndN59fuAGAj+pxWdoxDtUuXSx+sd8ZiGMnjIQklzRfQKBgQDyfwfTwJF/S2kuwVhW\nnjm5uvpscj41UVdTuJgdg8fqZ27AO1EBjINkKR718NicNSNAMmDrl8wVje48JphS\nPxfr7qG5q9nR7qPhjOFZosTFwyrdG1YjbxOFb5oHWAzILbFfCOin0Bs6xmpPGq7a\n7N5OKE3tEY0tU0W/I2Yu05LfcwKBgQDXC8J3Si0XZXIlRpaveKJiOqyF6hvNGgGI\n4e2OsfBCMP/P68HHUiwFok67XIDlRmsvYtfhfswThcir5pErV868uMTXtQbe4tUk\ngHkv5fgu/pBamAr9KA3aZ1O1k/56zAg/OsXKFsNYrFLgdOLEF1xnqs/EGBhN6sr9\nv93ZmjzPqwKBgQC6uGOvgiTGbqukC85Yi+cJA1dWb7VE2sgyN/4xI8qozFH0BPiA\nB9EYK62iVHyF80icYu5MGgtUQYBCorlBA0IJMisnS5MiWe2ofBD9Mx7u5DO6IxV1\nnU7bvS5OH1dgQAbGlZaHuO9ul18+X95pxl/6sIAoXg5l6yvWXIyO2+zIzwKBgQC0\nc4fBthrUcSoxoWQ85ovMxdOTo/mkSFhVVtCTVzl3McrX3MuEyK1sJODQVDVNL6Qt\n5VGmRVJWZ4MWzKmwp0QyFRIIuD2Ftu6IbM5EpUN3m+HiQ4elG4FUbjROQFvhC2k4\nNcdXZ3aQ6Dm7ZBoN1lSSIUGrGVT7vTSNbf1p5gV1dQKBgBRQW6DSrLJOasuGEwOx\nhHkZql4OyGllGf0iqnGMB/kBzuRKsWIl5cGaEa0wNwayXvsukrNJhuMPj5nWNPJn\nTzmaFmwZrHP498Tn46dzs2y8q4V4Wgezs9r8FNU77jegTl2gB1Kq7o+bKLr5PCkW\nPpBjGLz11+feMWsX4R/MGCuA\n-----END PRIVATE KEY-----\n";
 
-        let secret = create(
+        let assertion = create(
             PEM_PRIVATE_KEY,
             "761326798069-r5mljlln1rd4lrbhg75efgigp36m78j5@developer.gserviceaccount.com",
             &["https://www.googleapis.com/auth/devstorage.read_only".into()],
@@ -118,8 +118,8 @@ mod tests {
         )
         .unwrap();
 
-        println!("{secret}");
-        let mut split = secret.split('.');
+        println!("{assertion}");
+        let mut split = assertion.split('.');
         assert_eq!(
             split.next().unwrap(),
             "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9"

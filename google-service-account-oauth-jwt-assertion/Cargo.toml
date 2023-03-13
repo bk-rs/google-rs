@@ -1,7 +1,16 @@
 [package]
 name = "google-service-account-oauth-jwt-assertion"
 version = "0.1.0"
+authors = ["vkill <vkill.net@gmail.com>"]
 edition = "2021"
+description = "Google - Service account - OAuth JWT Assertion"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/bk-rs/google-rs"
+homepage = "https://github.com/bk-rs/google-rs"
+documentation = "https://docs.rs/google-service-account-oauth-jwt-assertion"
+keywords = []
+categories = []
+readme = "README.md"
 
 [package.metadata.docs.rs]
 all-features = true

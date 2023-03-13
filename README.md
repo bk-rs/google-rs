@@ -8,3 +8,11 @@ cargo fmt -- --check
 
 cargo test-all-features -- --nocapture
 ```
+
+## Publish order
+
+google-service-account-json-key
+
+google-service-account-oauth-jwt-assertion
+
+google-service-account-oauth-jwt-assertion/cli

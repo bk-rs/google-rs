@@ -7,7 +7,7 @@ edition = "2021"
 all-features = true
 
 [features]
-default = ["google-service-account-json-key"]
+default = []
 
 [dependencies]
 jsonwebtoken = { version = "8", default-features = false, features = ["use_pem"] }

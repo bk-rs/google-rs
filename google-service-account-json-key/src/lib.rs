@@ -30,11 +30,21 @@ pub struct Key {
     pub client_x509_cert_url: Url,
 }
 
+impl Key {
+    pub fn internal_from_str(s: &str) -> Result<Self, serde_json::Error> {
+        serde_json::from_str(s)
+    }
+
+    pub fn internal_from_slice(v: &[u8]) -> Result<Self, serde_json::Error> {
+        serde_json::from_slice(v)
+    }
+}
+
 impl FromStr for Key {
     type Err = serde_json::Error;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        serde_json::from_str(s)
+        Self::internal_from_str(s)
     }
 }
 

@@ -65,15 +65,14 @@ pub fn create(
 
 #[cfg(feature = "google-service-account-json-key")]
 pub fn create_from_service_account_json_key(
-    json: impl AsRef<str>,
+    json: impl AsRef<[u8]>,
     scopes: &[String],
 ) -> Result<String, CreateError> {
     use google_service_account_json_key::Key;
 
     let json = json.as_ref();
 
-    let key = json
-        .parse::<Key>()
+    let key = Key::internal_from_slice(json)
         .map_err(|err| CreateError::ParseServiceAccountJsonKeyFailed(err.to_string()))?;
 
     create(

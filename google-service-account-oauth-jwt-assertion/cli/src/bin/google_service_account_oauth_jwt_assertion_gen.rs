@@ -1,8 +1,8 @@
 /*
-cargo run -p google-service-account-oauth-jwt-assertion-cli --bin google_service_account_oauth_jwt_assertion_gen -- '/path/project-123456-123456789012.json' 'https://www.googleapis.com/auth/sqlservice.admin'
+cargo run -p google-service-account-oauth-jwt-assertion-cli --bin google_service_account_oauth_jwt_assertion_gen -- '/path/project-123456-123456789012.json' 'https://www.googleapis.com/auth/androidpublisher'
 Or
 cargo install google-service-account-oauth-jwt-assertion-cli
-google_service_account_oauth_jwt_assertion_gen '/path/project-123456-123456789012.json' 'https://www.googleapis.com/auth/sqlservice.admin'
+google_service_account_oauth_jwt_assertion_gen '/path/project-123456-123456789012.json' 'https://www.googleapis.com/auth/androidpublisher'
 */
 
 use std::{env, fs};
